@@ -64,3 +64,105 @@ after test finished, the test result would be found in the result folder.
 	 PhantomJS 1.9 (Linux): Executed 2 of 2 SUCCESS (0.087 secs / 0.002 secs)
 	.
 	PhantomJS 1.9 (Linux): Executed 2 of 2 SUCCESS (0.087 secs / 0.002 secs)
+
+# How to Run with fixtures
+## Project directory
+    test_js_with_karma
+    ├── config
+    │   ├── karma.conf.js
+    │   └── karma.conf.js.sample
+    ├── fixtures
+    │   ├── html
+    │   │   └── sample_component.html
+    │   └── json
+    │       └── sample_map.json
+    ├── js
+    │   └── utils.js
+    ├── lib
+    │   ├── jasmine-jquery.js
+    │   └── jquery-1.7.1.min.js
+    ├── README.md
+    ├── results
+    │   └── test-results.xml
+    ├── test.sh
+    └── units
+        └── utilSpec.js
+
+<br/>
+## JSON example
+### 1. add fixtures files in karma.conf.js
+      {
+          pattern: '../fixtures/json/*.json',
+          watched: true,
+          included: false,
+          served: true
+      }
+
+### 2. add proxy config into karma.conf.js
+    proxies = {
+        '/': 'http://localhost:3000/'
+    }
+
+### 3. need to start a file proxy server, here i use python SimpleHTTPServer
+    python -m SimpleHTTPServer 3000
+
+### 4. start test
+    karma start config/karma.conf.js
+
+    Serving HTTP on 0.0.0.0 port 3000 ...
+    [2013-08-02 17:44:04.569] [WARN] config - "/" is proxied, you should probably change urlRoot to avoid conflicts
+    INFO [karma]: Karma server started at http://localhost:9876/
+    INFO [launcher]: Starting browser PhantomJS
+    INFO [PhantomJS 1.9 (Linux)]: Connected on socket id MuFBJ0E_6vnPptwvaaD9
+    localhost - - [02/Aug/2013 17:44:05] "GET /fixtures/json/sample_map.json?_=1375436645848 HTTP/1.1" 200 -
+    localhost - - [02/Aug/2013 17:44:05] "GET /fixtures/json/sample_map.json?_=1375436645865 HTTP/1.1" 200 -
+    localhost - - [02/Aug/2013 17:44:05] "GET /fixtures/json/sample_map.json?_=1375436645876 HTTP/1.1" 200 -
+    PhantomJS 1.9 (Linux): Executed 5 of 5 SUCCESS (0.115 secs / 0.051 secs)
+    .
+    PhantomJS 1.9 (Linux): Executed 5 of 5 SUCCESS (0.115 secs / 0.051 secs)
+
+here i provide a test.sh to start test simplely.
+<br/>
+## HTML example
+### 1. add fixtures files in karma.conf.js
+      {
+          pattern: '../fixtures/html/*.html',
+          watched: true,
+          included: false,
+          served: true
+      }
+
+### 2. add proxy config into karma.conf.js
+    proxies = {
+        '/': 'http://localhost:3000/'
+    }
+
+### 3. need to start a file proxy server, here i use python SimpleHTTPServer
+    python -m SimpleHTTPServer 3000
+
+### 4. start test
+    karma start config/karma.conf.js
+
+    Serving HTTP on 0.0.0.0 port 3000 ...
+    [2013-08-05 10:25:02.357] [WARN] config - "/" is proxied, you should probably change urlRoot to avoid conflicts
+    INFO [karma]: Karma server started at http://localhost:9876/
+    INFO [launcher]: Starting browser PhantomJS
+    INFO [PhantomJS 1.9 (Linux)]: Connected on socket id ivnU9F8dlKMP9_6ISsGw
+    localhost - - [05/Aug/2013 10:25:03] "GET /fixtures/json/sample_map.json?_=1375669503146 HTTP/1.1" 200 -
+    localhost - - [05/Aug/2013 10:25:03] "GET /fixtures/json/sample_map.json?_=1375669503157 HTTP/1.1" 200 -
+    localhost - - [05/Aug/2013 10:25:03] "GET /fixtures/json/sample_map.json?_=1375669503163 HTTP/1.1" 200 -
+    localhost - - [05/Aug/2013 10:25:03] "GET /fixtures/html/sample_component.html?1375669503167 HTTP/1.1" 200 -
+    PhantomJS 1.9 (Linux): Executed 8 of 8 SUCCESS (0.079 secs / 0.038 secs)
+    .
+    PhantomJS 1.9 (Linux): Executed 8 of 8 SUCCESS (0.079 secs / 0.038 secs)
+
+
+
+# References
+
++ [Node](http://nodejs.org/)
++ [Karma](http://karma-runner.github.io/0.8/index.html)
++ [PhantomJS](http://phantomjs.org/)
++ [JQuery](http://jquery.com/)
++ [Jasmine](http://pivotal.github.io/jasmine/)
++ [Jasmine-JQuery](https://github.com/velesin/jasmine-jquery)
