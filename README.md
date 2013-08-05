@@ -141,6 +141,7 @@ here i provide a test.sh to start test simplely.
     python -m SimpleHTTPServer 3000
 
 ### 4. start test
+
     karma start config/karma.conf.js
 
     Serving HTTP on 0.0.0.0 port 3000 ...
@@ -157,6 +158,53 @@ here i provide a test.sh to start test simplely.
     PhantomJS 1.9 (Linux): Executed 8 of 8 SUCCESS (0.079 secs / 0.038 secs)
 
 
+# Code Coverage
+## Install Istanbul
+    npm install -g istanbul
+
+## Config karma with coverage feature
+    preprocessors = {
+        '**/js/*.js': 'coverage'
+    };
+
+    reporters = [..., 'converage']
+
+    coverageReporter = {
+        type : 'html',
+        dir : '../coverage/',
+        file : 'coverage.html'
+    }
+
+## Test Result, new Project Tree
+    .
+    ├── config
+    │   └── karma.conf.js
+    ├── **coverage**
+    │   ├── coverage-PhantomJS 1.9 (Linux)-20130805_110320.json
+    │   └── PhantomJS 1.9 (Linux)
+    │       ├── index.html
+    │       ├── js
+    │       │   ├── **index.html**
+    │       │   └── **utils.js.html**
+    │       ├── prettify.css
+    │       └── prettify.js
+    ├── fixtures
+    │   ├── html
+    │   │   └── sample_component.html
+    │   └── json
+    │       └── sample_map.json
+    ├── js
+    │   └── utils.js
+    ├── lib
+    │   ├── jasmine-jquery.js
+    │   └── jquery-1.7.1.min.js
+    ├── README.md
+    ├── results
+    │   └── test-results.xml
+    ├── test.sh
+    └── units
+        └── utilSpec.js
+
 
 # References
 
@@ -166,3 +214,4 @@ here i provide a test.sh to start test simplely.
 + [JQuery](http://jquery.com/)
 + [Jasmine](http://pivotal.github.io/jasmine/)
 + [Jasmine-JQuery](https://github.com/velesin/jasmine-jquery)
++ [Istanbul](https://github.com/yahoo/istanbul)

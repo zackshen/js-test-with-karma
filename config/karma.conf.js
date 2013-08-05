@@ -23,9 +23,19 @@ files = [
   }
 ];
 
-reporters = ['progress', 'dots', 'junit'];
+preprocessors = {
+  '../js/*.js': 'coverage'
+};
+
+reporters = ['progress', 'dots', 'junit', 'coverage'];
 junitReporter = {
     outputFile: '/home/zack/.jenkins/jobs/JS/workspace/js-results.xml'
+}
+
+coverageReporter = {
+    type : 'html',
+    dir : '../coverage/',
+    file : 'coverage.html'
 }
 
 logLevel = LOG_INFO;
