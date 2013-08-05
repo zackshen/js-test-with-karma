@@ -47,7 +47,7 @@ describe("Test Load Html Fixture: Sample_component.html", function() {
     it("set component text", function() {
         var compOne = $fixtureHtml.find('.component.one');
         var text = '123456';
-        addSomeTestIntoComponent(compOne, text);
+        addSomeTestIntoComponent(compOne, "aaa");
         expect(compOne.text()).toBe(text);
     });
 

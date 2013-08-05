@@ -28,7 +28,6 @@
 	export PHANTOMJS_BIN=/usr/local/phantomjs/bin/phantomjs
 
 </br>
-</br>
 ## 2. karma
 </br>
 ### Global installation
@@ -204,6 +203,13 @@ here i provide a test.sh to start test simplely.
     ├── test.sh
     └── units
         └── utilSpec.js
+
+# With Jenkins
+![Image](/test_js_with_karma/blob/master/snapshots/jenkins_1.jpg?raw=true)
+![Image](/test_js_with_karma/blob/master/snapshots/jenkins_2.jpg?raw=true)
+![Image](/test_js_with_karma/blob/master/snapshots/jenkins_3.jpg?raw=true)
+![Image](/test_js_with_karma/blob/master/snapshots/jenkins_4.jpg?raw=true)
+![Image](/test_js_with_karma/blob/master/snapshots/jenkins_5.jpg?raw=true)
 
 
 # References
