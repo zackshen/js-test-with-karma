@@ -205,11 +205,11 @@ here i provide a test.sh to start test simplely.
         └── utilSpec.js
 
 # With Jenkins
-![Image](/test_js_with_karma/blob/master/snapshots/jenkins_1.jpg?raw=true)
-![Image](/test_js_with_karma/blob/master/snapshots/jenkins_2.jpg?raw=true)
-![Image](/test_js_with_karma/blob/master/snapshots/jenkins_3.jpg?raw=true)
-![Image](/test_js_with_karma/blob/master/snapshots/jenkins_4.jpg?raw=true)
-![Image](/test_js_with_karma/blob/master/snapshots/jenkins_5.jpg?raw=true)
+![Image](/project-with-js-test/blob/master/snapshots/jenkins_1.jpg?raw=true)
+![Image](/project-with-js-test/blob/master/snapshots/jenkins_2.jpg?raw=true)
+![Image](/project-with-js-test/blob/master/snapshots/jenkins_3.jpg?raw=true)
+![Image](/project-with-js-test/blob/master/snapshots/jenkins_4.jpg?raw=true)
+![Image](/project-with-js-test/blob/master/snapshots/jenkins_5.jpg?raw=true)
 
 
 # References
