@@ -218,6 +218,6 @@ here i provide a test.sh to start test simplely.
 + [Karma](http://karma-runner.github.io/0.8/index.html)
 + [PhantomJS](http://phantomjs.org/)
 + [JQuery](http://jquery.com/)
-+ [Jasmine](http://pivotal.github.io/jasmine/)
++ [Jasmine](http://jasmine.github.io/)
 + [Jasmine-JQuery](https://github.com/velesin/jasmine-jquery)
 + [Istanbul](https://github.com/yahoo/istanbul)
